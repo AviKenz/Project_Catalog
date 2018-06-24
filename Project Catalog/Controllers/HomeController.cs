@@ -13,16 +13,7 @@ namespace Project_cathalogue.Controllers
     {
         public ActionResult Index(string name)
         {
-            ViewBag.Projects = getProjects;
-            List<ProjectModel> data = new List<ProjectModel>();
-            data.Add(new ProjectModel { Id = 1, Cathegory = "Robotik" });
-            data.Add(new ProjectModel { Id = 2, Cathegory = "Web development" });
-            data.Add(new ProjectModel { Id = 3, Cathegory = "Sofware development" });
-            data.Add(new ProjectModel { Id = 4, Cathegory = "UI Roboter" });
-
-            ViewBag.Roles = new SelectList(data, "Id", "Cathegory");
-
-
+            ViewBag.test = CatalogDataBase.getDatabase().dataBaseTest();
             return View();
         }
         // TODO H project in der Datenbank anlegen
@@ -35,39 +26,11 @@ namespace Project_cathalogue.Controllers
         //TODO H reperer le view
 
 
-        public bool addProject(ProjectModel project)
+        public string addProject(ProjectModel project)
         {
-            return CatalogDataBase.getDatabase().addProject(project);
+            return project.toString();
         }
 
-        private List<ProjectModel> getProjects
-        {
-            get
-            {
-                List<ProjectModel> projects = new List<ProjectModel>();
-
-                for (int i = 0; i < 3; i++)
-                {
-                    ProjectModel pr = new ProjectModel
-                    {
-                        Name = "Project Nr: " + i,
-                        Description = "",
-
-
-
-                        Id = i,
-
-
-                    };
-
-                    projects.Add(pr);
-
-                }
-
-                return projects;
-
-            }
-        }
 
         /**************Login*****************/
 
@@ -102,27 +65,6 @@ namespace Project_cathalogue.Controllers
             return View();
         }
 
-
-
-
-
-        [HttpGet]
-        public bool Cathe(bool choice)
-        {
-
-            if (choice)
-            {
-                var cat = new ProjectModel();
-
-
-                List<string> cathegory = new List<string>();
-                cathegory.Add(cat.ToString());
-                cat.Cathegory = "Robotik";
-                cat.Cathegory = "Web development";
-                ViewBag.ProjectModel = new SelectList(cathegory, "Cathegory");
-            }
-            return CatalogDataBase.getDatabase().Cathe(choice);
-        }
         public ActionResult Cathe(ProjectModel cat)
         {
             return View();

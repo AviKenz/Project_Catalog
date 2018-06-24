@@ -21,24 +21,11 @@ namespace Project_cathalogue.Models
         {
             MySqlConnectionStringBuilder connString = new MySqlConnectionStringBuilder();
             connString.Database = "project_catalog";
-            connString.UserID = "jackie";
-            connString.Password = "pupuce1993";
+            connString.UserID = "root";
             connString.Server = "127.0.0.1";
             connString.SslMode = MySqlSslMode.None;
             conn = new MySqlConnection(connString.ToString());
         }
-
-
-        public bool addProject(ProjectModel project)
-
-        {
-            // TODO H complete the String to insert project into database
-            string qryString = "INSERT INTO " + PROJECT_TABLE_NAME + " (projectid,name, attribute, startdate,enddate,deliverydate,cathegory,description,statut ,semester)" +
-                         " VALUES(" + project.Id + project.Name + ", " + project.Startdatum + "," + project.Enddatum + "," + project.Deliverydate + "," + project.Cathegory + "," + project.Description + "," + project.Statut + "," + project.Getsemester + ")";
-
-            return runWriteCommand(qryString);
-        }
-
 
         public static CatalogDataBase getDatabase()
         {
@@ -52,7 +39,7 @@ namespace Project_cathalogue.Models
 
         public bool dataBaseTest()
         {
-            String cmdString = $"INSERT INTO Test(name, age) VALUES('maFleur', '21')";
+            String cmdString = $"INSERT INTO test(name, age) VALUES('maFleur', '21')";
             return runWriteCommand(cmdString);
         }
 
@@ -68,12 +55,13 @@ namespace Project_cathalogue.Models
                 {
 
                 }
-                conn.Close();
             }
             catch (MySqlException e)
             {
                 result = false;
+                
             }
+            conn.Close();
             return result;
         }
 

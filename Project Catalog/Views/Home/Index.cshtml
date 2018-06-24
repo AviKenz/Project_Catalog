@@ -78,7 +78,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label class="control-label">Startdatum</label>
-                            @Html.TextBoxFor(model => model.Startdatum, new
+                            @Html.TextBoxFor(model => model.Start, new
                             {
                                 @class = "form-control",
                                 type = "date"
@@ -88,7 +88,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label class="control-label">Abgabedatum</label>
-                            @Html.TextBoxFor(model => model.Enddatum, new
+                            @Html.TextBoxFor(model => model.End, new
                             {
                                 @class = "form-control",
                                 type = "date"
@@ -113,8 +113,7 @@
                     @Html.TextAreaFor(model => model.Description, new
                     {
                         @class = "form-control",
-                        type = "date",
-                        id = "projectDescriptionArea"
+                        type = "text",
                     })
                 </div>
             </div>
@@ -130,24 +129,6 @@
     </div>
 </div>
 
-
-<
-<table class=" table " style=" background-color:lawngreen">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Abgabetermin</th>
-    </tr>
-</table>
-@foreach (Project_cathalogue.Models.ProjectModel item in ViewBag.Projects as List<Project_cathalogue.Models.ProjectModel>)
-{
-    <table class="table table-hover">
-        <tr style="background-color:palevioletred">
-            <td class="table-bordered">@item.Name</td>
-        </tr>
-    </table>
-}
-
 <div class="row">
     <div class="col-4">
         <h2>Ingenieur Informatik</h2>
@@ -159,6 +140,7 @@
     </div>
     <div class="col-4">
         <h2>Fachbereich2</h2>
+        @ViewBag.test
         <p></p>
         <p><a></a></p>
         <div><a href="https://www.f2.htw-berlin.de/" class="btn btn-primary btn-lg">FB2 &raquo;</a></div>

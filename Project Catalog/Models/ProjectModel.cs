@@ -8,64 +8,27 @@ namespace Project_cathalogue.Models
 {
     public class ProjectModel
     {
+        public int Id { get; }
+        public string Name { get; set; }
+        public string Status { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
+        public string Description { get; set; }
 
         public ProjectModel()
         {
 
         }
 
-        public DateTime Startdatum { get; set; }
-        public DateTime Enddatum { get; set; }
-        public DateTime Date
-
+        public string toString()
         {
-            get
-            {
-                DateTime now = DateTime.Now;
-                if (Startdatum.Date <= Enddatum.Date)
-                {
-                    now = DateTime.Now;
-                }
-                return now;
-            }
-            set
-            {
-                Enddatum = value;
-            }
+            string result = "";
+            result += "Project Name: " + Name + "\n";
+            result += "Project Status: " + Status + "\n";
+            result += "Project Start: " + Start + "\n";
+            result += "Project End: " + End + "\n";
+            result += "Project description: " + Description + "\n";
+            return result;
         }
-
-        public string Description { get; set; }
-        public DateTime Deliverydate { get; set; }
-        
-        
-        public string  Cathegory { get; set; }
-       
-        public string Course { get; set; }
-        public List<string> Statut { get; set; }
-
-
-        private string semester;
-        public string Getsemester
-        {
-            get
-            {
-
-                if ((DateTime.Compare(Startdatum, new DateTime(2018, 04, 01)) < 0) && (DateTime.Compare(Enddatum, new DateTime(2018, 09, 30)) > 0))
-                {
-                    semester = "SS";
-                    return semester;
-                }
-                else
-                {
-
-                    return "WS";
-                }
-
-
-            }
-        }
-
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }
