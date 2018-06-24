@@ -47,3 +47,4 @@ C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug
 C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.csproj.CopyComplete
 C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.dll
 C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.pdb
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.csprojAssemblyReference.cache

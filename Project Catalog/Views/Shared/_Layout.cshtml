@@ -31,7 +31,7 @@
                     @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Info", "About", "Home", new { @class = "nav-link"})
+                    @Html.ActionLink("Info", "About", "Home", new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
                     @Html.ActionLink("Kontakt", "Contact", "Home", new { @class = "nav-link" })
@@ -57,5 +57,12 @@
             @RenderBody()
         </div>
     </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Assets/Scripts/jquery-3.3.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="~/Assets/Scripts/bootstrap.min.js"></script>
+    <script src="~/Assets/Scripts/popper.min.js"></script>
 </body>
 </html>

@@ -7,13 +7,6 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 using MySql.Data.MySqlClient;
 
-
-
-
-
-
-
-
 namespace Project_cathalogue.Models
 {
     public class CatalogDataBase

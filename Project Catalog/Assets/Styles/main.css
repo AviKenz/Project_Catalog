@@ -1,12 +1,24 @@
-﻿.container {
+﻿/* add some space a the top of container */
+.container {
     padding-top: 70px;
 }
 
+/* resize textarea to fit the row */
 #projectDescriptionArea {
     height: 323px;
 }
 
+/* Maintain Buttons at the row bottom */
 #newProjectButtonsContainer {
     position: absolute;
     bottom: 15px;
+}
+
+/* add space between first and second button rowss */
+#resetNewProject {
+    margin-top: 5px;
+}
+
+#closeNewProject {
+    margin-top: 5px;
 }

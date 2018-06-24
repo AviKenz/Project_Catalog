@@ -99,6 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Scripts\bootstrap.min.js" />
+    <Content Include="Assets\Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Assets\Scripts\popper.min.js" />
     <Content Include="Assets\Styles\bootstrap.css" />
     <Content Include="Assets\Styles\main.css" />
     <Content Include="Global.asax" />
@@ -129,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

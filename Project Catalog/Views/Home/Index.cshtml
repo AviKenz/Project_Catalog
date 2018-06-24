@@ -17,9 +17,14 @@
 </div>
 
 
-
-<div id="newProjectContainer">
-    @{ Html.BeginForm("addProject", "Home", FormMethod.Post, new {id = "newprojectForm" }); }
+<div class="row">
+    <div class="offset-10 col-2">
+        <button class="btn btn-block" data-target="#newProjectContainer" data-toggle="collapse">Add Project</button>
+    </div>
+</div>
+<div class="row">
+    <div class="collapse col-12" id="newProjectContainer">
+        @{ Html.BeginForm("addProject", "Home", FormMethod.Post, new { id = "newprojectForm" }); }
         <div class="row">
             <div class="col-5">
                 <!-- first line -->
@@ -115,11 +120,14 @@
             </div>
             <div class="col-2">
                 <div id="newProjectButtonsContainer">
-                    <input class="btn btn-primary" type="submit" value="Add Project" />
+                    <input class="btn btn-primary btn-block" type="submit" value="Add" />
+                    <input class="btn btn-warning" id="resetNewProject" type="reset" value="Reset All" />
+                    <a class="btn btn-danger" id="closeNewProject" data-target="#newProjectContainer" data-toggle="collapse">Close</a>
                 </div>
             </div>
         </div>
-    @{ Html.EndForm(); }
+        @{ Html.EndForm(); }
+    </div>
 </div>
 
 
