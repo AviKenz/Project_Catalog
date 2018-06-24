@@ -43,6 +43,12 @@ namespace Project_cathalogue.Models
             return runWriteCommand(cmdString);
         }
 
+        public bool projectTableTest()
+        {
+            string cmdString = $"INSERT INTO " + PROJECT_TABLE_NAME + "(name, status, start, end, description, cathegory_id, course_id) VALUES ('projekt1', 'open', '2018-06-21', '2018-07-20', 'desc', '1', '1')";
+            return runWriteCommand(cmdString);
+        }
+
         private bool runWriteCommand(string   cmdString)
         {
             bool result = true;

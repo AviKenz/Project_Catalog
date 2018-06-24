@@ -13,7 +13,7 @@ namespace Project_cathalogue.Controllers
     {
         public ActionResult Index(string name)
         {
-            ViewBag.test = CatalogDataBase.getDatabase().dataBaseTest();
+            ViewBag.test = CatalogDataBase.getDatabase().projectTableTest();
             return View();
         }
         // TODO H project in der Datenbank anlegen
