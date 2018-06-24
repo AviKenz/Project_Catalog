@@ -1,0 +1,161 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Startseite";
+}
+
+@model Project_cathalogue.Models.ProjectModel
+
+
+
+@{
+
+    ViewBag.Title = "Home Page";
+}
+
+<div style="color:aqua">
+    <h1>PROJECT ADMINISTRATION</h1>
+</div>
+
+
+
+<div id="newProjectContainer">
+    @{ Html.BeginForm("addProject", "Home", FormMethod.Post, new {id = "newprojectForm" }); }
+        <div class="row">
+            <div class="col-5">
+                <!-- first line -->
+                <div class="row">
+                    <div class="col-8">
+                        <div class="form-group">
+                            <label class="control-label">Name</label>
+                            @Html.TextBoxFor(model => model.Name, new
+                            {
+                                @class = "form-control",
+                                type = "text"
+                            })
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="control-label">Status</label>
+                            <select ty class="form-control">
+                                <!-- TODO must be retrieved from database -->
+                                <option>OFFEN</option>
+                                <option>FERTIG</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- second line -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">Kategorie</label>
+                            <select ty class="form-control">
+                                <!-- TODO must be retrieved in database -->
+                                <option>Roboter</option>
+                                <option>Umwelt</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">Vorlesung</label>
+                            <select ty class="form-control">
+                                <!-- TODO must be retrieved in database -->
+                                <option>Programmier Projekt</option>
+                                <option>Mechatronik</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- third line -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">Startdatum</label>
+                            @Html.TextBoxFor(model => model.Startdatum, new
+                            {
+                                @class = "form-control",
+                                type = "date"
+                            })
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">Abgabedatum</label>
+                            @Html.TextBoxFor(model => model.Enddatum, new
+                            {
+                                @class = "form-control",
+                                type = "date"
+                            })
+
+                        </div>
+                    </div>
+                </div>
+                <!-- fourth line -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">Tags</label>
+                            <textarea class="form-control" placeholder="Tags getrennt durch Leerzeichen..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <label class="control-label">Beschreibung</label>
+                    @Html.TextAreaFor(model => model.Description, new
+                    {
+                        @class = "form-control",
+                        type = "date",
+                        id = "projectDescriptionArea"
+                    })
+                </div>
+            </div>
+            <div class="col-2">
+                <div id="newProjectButtonsContainer">
+                    <input class="btn btn-primary" type="submit" value="Add Project" />
+                </div>
+            </div>
+        </div>
+    @{ Html.EndForm(); }
+</div>
+
+
+<
+<table class=" table " style=" background-color:lawngreen">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Abgabetermin</th>
+    </tr>
+</table>
+@foreach (Project_cathalogue.Models.ProjectModel item in ViewBag.Projects as List<Project_cathalogue.Models.ProjectModel>)
+{
+    <table class="table table-hover">
+        <tr style="background-color:palevioletred">
+            <td class="table-bordered">@item.Name</td>
+        </tr>
+    </table>
+}
+
+<div class="row">
+    <div class="col-4">
+        <h2>Ingenieur Informatik</h2>
+        <div><a href="https://ii.htw-berlin.de/" class="btn btn-primary btn-lg">IIberlin &raquo;</a></div>
+        <p><a></a></p>
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+        <h2>Fachbereich2</h2>
+        <p></p>
+        <p><a></a></p>
+        <div><a href="https://www.f2.htw-berlin.de/" class="btn btn-primary btn-lg">FB2 &raquo;</a></div>
+    </div>
+</div>
+
+
+

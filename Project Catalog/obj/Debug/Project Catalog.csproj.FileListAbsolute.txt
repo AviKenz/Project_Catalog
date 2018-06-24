@@ -1,0 +1,49 @@
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\Project Catalog.dll.config
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\Project Catalog.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\Project Catalog.pdb
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\csc.exe
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\csc.exe.config
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\csc.rsp
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\csi.exe
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\csi.rsp
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\System.AppContext.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\vbc.exe
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\vbc.exe.config
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\vbc.rsp
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\VBCSCompiler.exe
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\MySql.Data.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.Helpers.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.Mvc.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.Razor.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.WebPages.Deployment.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.WebPages.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.WebPages.Razor.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.Helpers.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.Mvc.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.Razor.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.WebPages.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.WebPages.Deployment.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\bin\System.Web.WebPages.Razor.xml
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.csproj.CoreCompileInputs.cache
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.csproj.CopyComplete
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.dll
+C:\Users\AviKenz\Projects\VisualStudio\Project Catalog\Project Catalog\obj\Debug\Project Catalog.pdb

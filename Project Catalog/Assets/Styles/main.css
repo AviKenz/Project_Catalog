@@ -1,0 +1,12 @@
+﻿.container {
+    padding-top: 70px;
+}
+
+#projectDescriptionArea {
+    height: 323px;
+}
+
+#newProjectButtonsContainer {
+    position: absolute;
+    bottom: 15px;
+}
