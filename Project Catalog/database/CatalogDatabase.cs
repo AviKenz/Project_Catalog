@@ -37,16 +37,15 @@ namespace Project_cathalogue.Models
             return instance;
         }
 
-        public bool dataBaseTest()
+        public string addProject(ProjectModel p)
         {
-            String cmdString = $"INSERT INTO test(name, age) VALUES('maFleur', '21')";
-            return runWriteCommand(cmdString);
-        }
+            string qryStr = $"INSERT INTO " + PROJECT_TABLE_NAME + " (name, status, start, end, description," +
+                "cathegory_id, course_id)" + 
+                generateValuesString(new string[]{ p.Name, p.Status, p.getStartDateString(),
+                    p.getEndDateString(), p.Description}) + ";";
+            // TODO NEXT link selectbox selection with model
 
-        public bool projectTableTest()
-        {
-            string cmdString = $"INSERT INTO " + PROJECT_TABLE_NAME + "(name, status, start, end, description, cathegory_id, course_id) VALUES ('projekt1', 'open', '2018-06-21', '2018-07-20', 'desc', '1', '1')";
-            return runWriteCommand(cmdString);
+            return qryStr;
         }
 
         private bool runWriteCommand(string   cmdString)
@@ -71,9 +70,37 @@ namespace Project_cathalogue.Models
             return result;
         }
 
-        internal bool Cathe(bool choice)
+        private string generateValuesString(string[] values)
         {
-            throw new NotImplementedException();
+            string result = "VALUES(";
+            bool first = true;
+            int len = values.Count();
+            for (int i=0; i<len; i++)
+            {
+                if( first )
+                {
+                    result += values.ElementAt(i);
+                    first = false;
+                } else
+                {
+                    result += ", " + values.ElementAt(i);
+                }
+                
+            }
+            result += ")";
+            return result;
+        }
+
+        public bool dataBaseTest()
+        {
+            String cmdString = $"INSERT INTO test(name, age) VALUES('maFleur', '21')";
+            return runWriteCommand(cmdString);
+        }
+
+        public bool projectTableTest()
+        {
+            string cmdString = $"INSERT INTO " + PROJECT_TABLE_NAME + "(name, status, start, end, description, cathegory_id, course_id) VALUES ('projekt1', 'open', '2018-06-21', '2018-07-20', 'desc', '1', '1')";
+            return runWriteCommand(cmdString);
         }
     }
 }

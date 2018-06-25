@@ -28,7 +28,7 @@ namespace Project_cathalogue.Controllers
 
         public string addProject(ProjectModel project)
         {
-            return project.toString();
+            return CatalogDataBase.getDatabase().addProject(project);
         }
 
 

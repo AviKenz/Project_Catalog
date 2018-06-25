@@ -23,11 +23,36 @@ namespace Project_cathalogue.Models
         public string toString()
         {
             string result = "";
-            result += "Project Name: " + Name + "\n";
-            result += "Project Status: " + Status + "\n";
-            result += "Project Start: " + Start + "\n";
-            result += "Project End: " + End + "\n";
-            result += "Project description: " + Description + "\n";
+            result += "Project Name: " + Name + "<br>";
+            result += "Project Status: " + Status + "<br>";
+            result += "Project Start: " + toIsoStdDate(Start) + "<br>";
+            result += "Project End: " + toIsoStdDate(End) + "<br>";
+            result += "Project description: " + Description + "<br>";
+            return result;
+        }
+
+        public string getStartDateString()
+        {
+            return toIsoStdDate(Start);
+        }
+
+        public string getEndDateString()
+        {
+            return toIsoStdDate(End);
+        }
+
+        private string toIsoStdDate(DateTime date)
+        {
+            return date.ToString("yyyy-MM-dd");
+        }
+
+        private List<string> generateTagFromString(string s)
+        {
+            List<string> result = new List<string>();
+            foreach(string item in s.Split(' '))
+            {
+                result.Add(item);
+            }
             return result;
         }
     }
