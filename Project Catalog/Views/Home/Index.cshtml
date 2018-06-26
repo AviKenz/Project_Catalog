@@ -42,11 +42,11 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label class="control-label">Status</label>
-                            <select ty class="form-control">
                                 <!-- TODO must be retrieved from database -->
-                                <option value="open">open</option>
-                                <option value="closed">closed</option>
-                            </select>
+                                @Html.DropDownListFor(model => model.Status, 
+                                    new SelectList(new string[] { "open", "closed" }, "open"), 
+                                    htmlAttributes: new { @class = "form-control" })
+
                         </div>
                     </div>
                 </div>
@@ -57,8 +57,8 @@
                             <label class="control-label">Kategorie</label>
                             <select ty class="form-control">
                                 <!-- TODO must be retrieved in database -->
-                                <option value="roboter">roboter</option>
-                                <option value="embedded">embedded</option>
+                                <option value="1">roboter</option>
+                                <option value="2">embedded</option>
                             </select>
                         </div>
                     </div>

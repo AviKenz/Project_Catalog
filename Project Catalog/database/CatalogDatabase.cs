@@ -79,11 +79,11 @@ namespace Project_cathalogue.Models
             {
                 if( first )
                 {
-                    result += values.ElementAt(i);
+                    result += "'" + values.ElementAt(i) + "'";
                     first = false;
                 } else
                 {
-                    result += ", " + values.ElementAt(i);
+                    result += ", '" + values.ElementAt(i) + "'";
                 }
                 
             }
