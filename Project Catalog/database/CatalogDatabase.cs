@@ -37,18 +37,43 @@ namespace Project_cathalogue.Models
             return instance;
         }
 
-        public string addProject(ProjectModel p)
+        public bool addProject(ProjectModel p)
         {
-            string qryStr = $"INSERT INTO " + PROJECT_TABLE_NAME + " (name, status, start, end, description," +
-                "cathegory_id, course_id)" + 
-                generateValuesString(new string[]{ p.Name, p.Status, p.getStartDateString(),
-                    p.getEndDateString(), p.Description}) + ";";
-            // TODO NEXT link selectbox selection with model
+            //string qryStr = $"INSERT INTO " + PROJECT_TABLE_NAME + " (name, status, start, end, description," +
+            //   "cathegory_id, course_id)" + 
+            //   generateValuesString(new string[]{ p.Name, p.Status, p.getStartDateString(),
+            //       p.getEndDateString(), p.Description}) + ";";
 
-            return qryStr;
+            string qryStr = $"INSERT INTO " + PROJECT_TABLE_NAME + " (name, status, start, end, description) " + 
+               generateValuesString(new string[]{ p.Name, p.Status, p.getStartDateString(),
+                   p.getEndDateString(), p.Description}) + ";";
+            // TODO Next insert a complete Project incl. Cathegory and Course (Foreign Keys)
+
+
+            return runWriteCommand(qryStr);
         }
 
-        private bool runWriteCommand(string   cmdString)
+        public List<Object> runReadCommand<T>(string cmdString)
+        {
+            List<Object> result = null;
+
+            MySqlCommand cmd = new MySqlCommand(cmdString, conn);
+            try
+            {
+                openConnection();
+                var reader = cmd.ExecuteReader();
+                while( reader.Read() )
+                {
+                    // TODO Pending...
+                }
+            } catch (MySqlException e)
+            {
+
+            }
+            return result;
+        }
+
+        private bool runWriteCommand(string cmdString)
         {
             bool result = true;
             MySqlCommand cmd = new MySqlCommand(cmdString, conn);
@@ -68,6 +93,18 @@ namespace Project_cathalogue.Models
             }
             conn.Close();
             return result;
+        }
+
+        private void openConnection()
+        {
+            if( conn.State != System.Data.ConnectionState.Open )
+            {
+                conn.Open();
+            } else
+            {
+                throw new Exception("Could not open DB Connection !");
+            }
+            
         }
 
         private string generateValuesString(string[] values)

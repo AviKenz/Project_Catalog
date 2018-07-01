@@ -55,21 +55,19 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label class="control-label">Kategorie</label>
-                            <select ty class="form-control">
-                                <!-- TODO must be retrieved in database -->
-                                <option value="1">roboter</option>
-                                <option value="2">embedded</option>
-                            </select>
+                            <!-- TODO must be retrieved in database -->
+                            @Html.DropDownListFor(model => model.Status,
+                                new SelectList(new string[] { "kategorie1", "kategorie2" }, "kategorie1"),
+                                htmlAttributes: new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label class="control-label">Vorlesung</label>
-                            <select ty class="form-control">
-                                <!-- TODO must be retrieved in database -->
-                                <option value="softwareentwicklung">softwareentwicklung</option>
-                                <option value="programmierprojekt">programmierprojekt</option>
-                            </select>
+                            <!-- TODO must be retrieved in database -->
+                            @Html.DropDownListFor(model => model.Status,
+                            new SelectList(new string[] { "vorlesung1", "vorlesung2" }, "vorlesung1"),
+                            htmlAttributes: new { @class = "form-control" })
                         </div>
                     </div>
                 </div>

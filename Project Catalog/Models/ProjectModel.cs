@@ -6,9 +6,8 @@ using Project_cathalogue.Models;
 
 namespace Project_cathalogue.Models
 {
-    public class ProjectModel
+    public class ProjectModel 
     {
-        public int Id { get; }
         public string Name { get; set; }
         public string Status { get; set; }
         public DateTime Start { get; set; }

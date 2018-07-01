@@ -26,7 +26,7 @@ namespace Project_cathalogue.Controllers
         //TODO H reperer le view
 
 
-        public string addProject(ProjectModel project)
+        public bool addProject(ProjectModel project)
         {
             return CatalogDataBase.getDatabase().addProject(project);
         }
