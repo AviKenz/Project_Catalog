@@ -24,106 +24,111 @@
 </div>
 <div class="row">
     <div class="collapse col-12" id="newProjectContainer">
-        @{ Html.BeginForm("addProject", "Home", FormMethod.Post, new { id = "newprojectForm" }); }
-        <div class="row">
-            <div class="col-5">
-                <!-- first line -->
-                <div class="row">
-                    <div class="col-8">
-                        <div class="form-group">
-                            <label class="control-label">Name</label>
-                            @Html.TextBoxFor(model => model.Name, new
-                            {
-                                @class = "form-control",
-                                type = "text"
-                            })
+        @using (Ajax.BeginForm("addProject", "Home", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "newProjectResult" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <!-- fist column -->
+                <div class="col-5">
+                    <!-- first line -->
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                @Html.TextBoxFor(model => model.Name, new
+                                {
+                                    @class = "form-control",
+                                    type = "text"
+                                })
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label class="control-label">Status</label>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label class="control-label">Status</label>
                                 <!-- TODO must be retrieved from database -->
-                                @Html.DropDownListFor(model => model.Status, 
-                                    new SelectList(new string[] { "Open", "Accepted", "Started", "Finished", "Denied" }, "Open"), 
+                                @Html.DropDownListFor(model => model.Status,
+                                    new SelectList(new string[] { "Open", "Accepted", "Started", "Finished", "Denied" }, "Open"),
                                     htmlAttributes: new { @class = "form-control" })
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- second line -->
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label class="control-label">Kategorie</label>
-                            <!-- TODO must be retrieved in database -->
-                            @Html.DropDownListFor(model => model.CategoryId,
-                                new SelectList(ViewBag.Categories, "Id", "Name", "-- Select --"),
+                    <!-- second line -->
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="control-label">Kategorie</label>
+                                <!-- TODO must be retrieved in database -->
+                                @Html.DropDownListFor(model => model.CategoryId,
+                                    new SelectList(ViewBag.Categories, "Id", "Name", "-- Select --"),
+                                    htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="control-label">Vorlesung</label>
+                                <!-- TODO must be retrieved in database -->
+                                @Html.DropDownListFor(model => model.CourseId,
+                                new SelectList(ViewBag.Courses, "Id", "Name", "-- Select --"),
                                 htmlAttributes: new { @class = "form-control" })
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label class="control-label">Vorlesung</label>
-                            <!-- TODO must be retrieved in database -->
-                            @Html.DropDownListFor(model => model.CourseId,
-                            new SelectList(ViewBag.Courses, "Id", "Name", "-- Select --"),
-                            htmlAttributes: new { @class = "form-control" })
+                    <!-- third line -->
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="control-label">Startdatum</label>
+                                @Html.TextBoxFor(model => model.Start, new
+                                {
+                                    @class = "form-control",
+                                    type = "date"
+                                })
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- third line -->
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label class="control-label">Startdatum</label>
-                            @Html.TextBoxFor(model => model.Start, new
-                            {
-                                @class = "form-control",
-                                type = "date"
-                            })
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label class="control-label">Abgabedatum</label>
-                            @Html.TextBoxFor(model => model.End, new
-                            {
-                                @class = "form-control",
-                                type = "date"
-                            })
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="control-label">Abgabedatum</label>
+                                @Html.TextBoxFor(model => model.End, new
+                                {
+                                    @class = "form-control",
+                                    type = "date"
+                                })
 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fourth line -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="control-label">Tags</label>
+                                <textarea class="form-control" placeholder="Tags getrennt durch Leerzeichen..."></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- fourth line -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label class="control-label">Tags</label>
-                            <textarea class="form-control" placeholder="Tags getrennt durch Leerzeichen..."></textarea>
-                        </div>
+                <!-- second column -->
+                <div class="col-5">
+                    <div class="form-group">
+                        <label class="control-label">Beschreibung</label>
+                        @Html.TextAreaFor(model => model.Description, new
+                        {
+                            @class = "form-control",
+                            type = "text",
+                        })
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div id="newProjectButtonsContainer">
+                        <input class="btn btn-primary btn-block" type="submit" value="Add" />
+                        <input class="btn btn-warning" id="resetNewProject" type="reset" value="Reset All" />
+                        <a class="btn btn-danger" id="closeNewProject" data-target="#newProjectContainer" data-toggle="collapse">Close</a>
                     </div>
                 </div>
             </div>
-            <div class="col-5">
-                <div class="form-group">
-                    <label class="control-label">Beschreibung</label>
-                    @Html.TextAreaFor(model => model.Description, new
-                    {
-                        @class = "form-control",
-                        type = "text",
-                    })
-                </div>
-            </div>
-            <div class="col-2">
-                <div id="newProjectButtonsContainer">
-                    <input class="btn btn-primary btn-block" type="submit" value="Add" />
-                    <input class="btn btn-warning" id="resetNewProject" type="reset" value="Reset All" />
-                    <a class="btn btn-danger" id="closeNewProject" data-target="#newProjectContainer" data-toggle="collapse">Close</a>
-                </div>
-            </div>
-        </div>
-        @{ Html.EndForm(); }
+            <div class="newProjectResult"></div>
+        }
     </div>
 </div>
 

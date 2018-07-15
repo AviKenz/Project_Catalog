@@ -16,7 +16,7 @@ namespace Project_cathalogue.Controllers
             ViewBag.test = "NOT USED...";
             ViewBag.Categories = CatalogDataBase.getDatabase().getCategories();
             ViewBag.Courses = CatalogDataBase.getDatabase().getCourses();
-            return View();
+            return View(name);
         }
         // TODO H project in der Datenbank anlegen
         // TODO H benutzer Oberfläsche fertig einstellen
@@ -27,10 +27,11 @@ namespace Project_cathalogue.Controllers
         //TODO M demander au prof si il faut un formulaire pour devenir dozent
         //TODO H reperer le view
 
-
-        public bool addProject(ProjectModel project)
+        [HttpPost]
+        public ActionResult addProject(ProjectModel project)
         {
-            return CatalogDataBase.getDatabase().addProject(project);
+            CatalogDataBase.getDatabase().addProject(project);
+            return Index("Index");
         }
 
 
