@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <label class="control-label">Kategorie</label>
                             <!-- TODO must be retrieved in database -->
-                            @Html.DropDownListFor(model => model.Status,
+                            @Html.DropDownListFor(model => model.CategoryId,
                                 new SelectList(ViewBag.Categories, "Id", "Name", "-- Select --"),
                                 htmlAttributes: new { @class = "form-control" })
                         </div>
@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <label class="control-label">Vorlesung</label>
                             <!-- TODO must be retrieved in database -->
-                            @Html.DropDownListFor(model => model.Status,
+                            @Html.DropDownListFor(model => model.CourseId,
                             new SelectList(ViewBag.Courses, "Id", "Name", "-- Select --"),
                             htmlAttributes: new { @class = "form-control" })
                         </div>

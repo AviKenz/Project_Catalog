@@ -13,6 +13,8 @@ namespace Project_cathalogue.Models
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public string Description { get; set; }
+        public int CategoryId { get; set; }
+        public int CourseId { get; set; }
 
         public ProjectModel()
         {

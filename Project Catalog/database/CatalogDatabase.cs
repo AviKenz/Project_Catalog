@@ -48,9 +48,9 @@ namespace Project_cathalogue.Models
             //   generateValuesString(new string[]{ p.Name, p.Status, p.getStartDateString(),
             //       p.getEndDateString(), p.Description}) + ";";
 
-            string qryStr = $"INSERT INTO " + PROJECT_TABLE_NAME + " (name, status, start, end, description) " + 
+            string qryStr = $"INSERT INTO " + PROJECT_TABLE_NAME + " (name, status, start, end, description, category_id, course_id) " + 
                generateValuesString(new string[]{ p.Name, p.Status, p.getStartDateString(),
-                   p.getEndDateString(), p.Description}) + ";";
+                   p.getEndDateString(), p.Description, p.CategoryId.ToString(), p.CourseId.ToString()}) + ";";
             // TODO Next insert a complete Project incl. Cathegory and Course (Foreign Keys)
 
 
