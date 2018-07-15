@@ -44,7 +44,7 @@
                             <label class="control-label">Status</label>
                                 <!-- TODO must be retrieved from database -->
                                 @Html.DropDownListFor(model => model.Status, 
-                                    new SelectList(new string[] { "open", "closed" }, "open"), 
+                                    new SelectList(new string[] { "Open", "Accepted", "Started", "Finished", "Denied" }, "Open"), 
                                     htmlAttributes: new { @class = "form-control" })
 
                         </div>
@@ -57,7 +57,7 @@
                             <label class="control-label">Kategorie</label>
                             <!-- TODO must be retrieved in database -->
                             @Html.DropDownListFor(model => model.Status,
-                                new SelectList(new string[] { "kategorie1", "kategorie2" }, "kategorie1"),
+                                new SelectList(ViewBag.Categories, "Id", "Name", "-- Select --"),
                                 htmlAttributes: new { @class = "form-control" })
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             <label class="control-label">Vorlesung</label>
                             <!-- TODO must be retrieved in database -->
                             @Html.DropDownListFor(model => model.Status,
-                            new SelectList(new string[] { "vorlesung1", "vorlesung2" }, "vorlesung1"),
+                            new SelectList(ViewBag.Courses, "Id", "Name", "-- Select --"),
                             htmlAttributes: new { @class = "form-control" })
                         </div>
                     </div>

@@ -6,12 +6,16 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using MySql.Data.MySqlClient;
+using Project_Catalog.Models;
 
 namespace Project_cathalogue.Models
 {
     public class CatalogDataBase
     {
         const string PROJECT_TABLE_NAME = "project";
+        const string Category_TABLE_NAME = "category";
+        const string COURSE_TABLE_NAME = "course";
+        const string STATUS_TABLE_NAME = "status";
 
         private static CatalogDataBase instance;
 
@@ -51,6 +55,57 @@ namespace Project_cathalogue.Models
 
 
             return runWriteCommand(qryStr);
+        }
+
+        public List<SelectBoxModel> getCourses()
+        {
+            List<SelectBoxModel> result = new List<Project_Catalog.Models.SelectBoxModel>();
+            string qryString = $"SELECT * FROM " + COURSE_TABLE_NAME;
+            MySqlCommand cmd = new MySqlCommand(qryString, conn);
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    result.Add(new SelectBoxModel()
+                    {
+                        Id = (int)reader["id"],
+                        Name = reader["name"].ToString()
+                    });
+                }
+            }
+            catch (MySqlException e)
+            {
+
+            }
+            conn.Close();
+            return result;
+        }
+
+        public List<SelectBoxModel> getCategories()
+        {
+            List<SelectBoxModel> result = new List<Project_Catalog.Models.SelectBoxModel>();
+            string qryString = $"SELECT * FROM " + Category_TABLE_NAME;
+            MySqlCommand cmd = new MySqlCommand(qryString, conn);
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    result.Add(new SelectBoxModel() {
+                        Id = (int) reader["id"],
+                        Name = reader["name"].ToString()
+                    });
+                }
+            }
+            catch (MySqlException e)
+            {
+
+            }
+            conn.Close();
+            return result;
         }
 
         public List<Object> runReadCommand<T>(string cmdString)
