@@ -30,7 +30,14 @@ namespace Project_cathalogue.Controllers
         [HttpPost]
         public ActionResult addProject(ProjectModel project)
         {
-            CatalogDataBase.getDatabase().addProject(project);
+            if (CatalogDataBase.getDatabase().addProject(project))
+            {
+                ViewBag.AddProjectResult = "Project Succesfully added !";
+            }
+            else
+            {
+                ViewBag.AddProjectResult = "Error when Adding Project !";
+            };
             return Index("Index");
         }
 
