@@ -16,6 +16,7 @@ namespace Project_cathalogue.Controllers
             ViewBag.test = "NOT USED...";
             ViewBag.Categories = CatalogDataBase.getDatabase().getCategories();
             ViewBag.Courses = CatalogDataBase.getDatabase().getCourses();
+            ViewBag.Projects = CatalogDataBase.getDatabase().fetchAllProjects();
             return View(name);
         }
         // TODO H project in der Datenbank anlegen

@@ -128,6 +128,41 @@ namespace Project_cathalogue.Models
             return result;
         }
 
+        public List<ProjectModel> fetchAllProjects()
+        {
+            List<ProjectModel> result = new List<ProjectModel>();
+            String qry = $"SELECT * FROM " + PROJECT_TABLE_NAME;
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while( reader.Read() )
+                {
+                    ProjectModel project = new ProjectModel();
+                    project.Id = reader.GetInt16(0);
+                    project.Name = reader.GetString(1);
+                    project.Status = reader.GetString(2);
+                    project.Start = reader.GetDateTime(3);
+                    project.End = reader.GetDateTime(4);
+                    project.Description = reader.GetString(5);
+                    project.CategoryId = reader.GetInt16(6);
+                    project.CourseId = reader.GetInt16(7);
+                    result.Add(project);
+                }              
+            }
+            catch (MySqlException e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return result;
+        }
+
         private bool runWriteCommand(string cmdString)
         {
             bool result = true;

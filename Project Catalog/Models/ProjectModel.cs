@@ -8,6 +8,7 @@ namespace Project_cathalogue.Models
 {
     public class ProjectModel 
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
         public DateTime Start { get; set; }

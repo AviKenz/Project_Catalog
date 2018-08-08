@@ -131,6 +131,48 @@
         }
     </div>
 </div>
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" name="projectSearch" placeholder="Search by Name, Category, Course..." />
+    </div>
+</div>
+<div class="row"></div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Starttermin</th>
+                    <th scope="col">Abgabetermin</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Kategorie</th>
+                    <th scope="col">Vorlesung</th>
+                    <th scope="col">Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in ViewBag.Projects)
+                {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Status</td>
+                    <td>@item.Start</td>
+                    <td>@item.End</td>
+                    <td>@item.Description</td>
+                    <td>@item.CategoryId</td>
+                    <td>@item.CourseId</td>
+                    <td>
+                        @Html.ActionLink("Annehmen", "acceptProject", new { @item.Id }, new { @class = "btn btn-sm btn-success btn-block" })
+                        @Html.ActionLink("Annehmen", "rejectProject", new { @item.Id }, new { @class = "btn btn-sm btn-danger btn-block" })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-4">
